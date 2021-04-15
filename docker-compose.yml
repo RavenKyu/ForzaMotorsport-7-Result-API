@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+  forza-result-ocr:
+    image: forza-result:latest
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    restart: always
+    container_name: forza-motor-sport-7-reslut-ocr
+    expose:
+      - 5000  # api
+    ports:
+      - "5000:5000"
+    command: |
+      -a 0.0.0.0
